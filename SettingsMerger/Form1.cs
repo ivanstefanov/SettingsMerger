@@ -60,5 +60,11 @@ namespace SettingsMerger
             tbxLocalSettingsFilePath.Text = string.Empty;
             tbxOutput.Text = string.Empty;
         }
+
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            var help = new HelpForm();
+            help.ShowDialog();
+        }
     }
 }

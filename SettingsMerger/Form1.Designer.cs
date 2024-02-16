@@ -232,6 +232,7 @@
             helpToolStripButton.Name = "helpToolStripButton";
             helpToolStripButton.Size = new Size(23, 22);
             helpToolStripButton.Text = "He&lp";
+            helpToolStripButton.Click += helpToolStripButton_Click;
             // 
             // Form1
             // 
@@ -254,7 +255,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Settings Merger";
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ResumeLayout(false);
