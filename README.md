@@ -50,6 +50,13 @@ Ensure you replace **<RESOURCE_NAME>** and **<RESOURCE_GROUP_NAME>** with your a
 - Follow the on-screen instructions to input the necessary information, including the path to your local **appsettings.json** or **local.settings.json** file and the Azure application settings to merge.
 - Click the "Merge" button to start the process. The tool will automatically merge the Azure settings into your local configuration file.
 
+## Contribution
+1. Create a feature branch.
+2. Do your changes.
+3. Push your branch.
+4. Create pull request with well described reasoning about the changes.
+5. Wait for approval.
+6. Merge your changes after the approval.
 
 ## Further development
 The purpose of this tool is to become more and more useful for the developers who works with Azure by adding more and more features that can automate their work and helps them to save precious time.
