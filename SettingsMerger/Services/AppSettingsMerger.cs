@@ -8,12 +8,12 @@ namespace SettingsMerger.Services
 {
     public class AppSettingsMerger :BaseMerger
     {
-        string _azureConfigPath = "";
+        string _azureSettingsToMerge = "";
         string _appSettingsPath = "";
 
-        public AppSettingsMerger(string azureConfigPath, string appSettingsPath): base(azureConfigPath, appSettingsPath)
+        public AppSettingsMerger(string azureSettingsToMerge, string appSettingsPath): base(azureSettingsToMerge, appSettingsPath)
         {
-            _azureConfigPath = azureConfigPath;
+            _azureSettingsToMerge = azureSettingsToMerge;
             _appSettingsPath = appSettingsPath;
         }
         public override string Merge(bool overrideLocalFile = true)
@@ -21,8 +21,7 @@ namespace SettingsMerger.Services
             var output = "No results...";
             try
             {
-
-                var azureConfig = JsonConvert.DeserializeObject<List<AzureConfigItem>>(File.ReadAllText(_azureConfigPath));
+                var azureConfig = JsonConvert.DeserializeObject<List<AzureConfigItem>>(_azureSettingsToMerge);
                 var appSettings = JObject.Parse(File.ReadAllText(_appSettingsPath));
 
                 foreach (var item in azureConfig)
@@ -35,7 +34,15 @@ namespace SettingsMerger.Services
                         {
                             currentObject[pathParts[i]] = new JObject();
                         }
-                        currentObject = (JObject)currentObject[pathParts[i]];
+                        try
+                        {
+                            currentObject = (JObject)currentObject[pathParts[i]];
+                        }
+                        catch (Exception ex)
+                        {
+                            output = $"Casting error occurred: currentObject: {currentObject}";
+                            throw;
+                        }                        
                     }
 
                     currentObject[pathParts[^1]] = item.Value;
@@ -48,7 +55,7 @@ namespace SettingsMerger.Services
             }
             catch (Exception ex)
             {
-                output = "Error occured:" + ex.ToString();
+                output += "Error occurred:" + ex.ToString();
             }
             return output;
         }

@@ -8,12 +8,12 @@ namespace SettingsMerger.Services
 {
     public class LocalSettingsMerger: BaseMerger
     {
-        string _azureConfigPath = "";
+        string _azureSettingsToMerge = "";
         string _localSettingsPath = "";
 
-        public LocalSettingsMerger(string azureConfigPath, string localSettingsPath): base(azureConfigPath, localSettingsPath)
+        public LocalSettingsMerger(string azureSettingsToMerge, string localSettingsPath): base(azureSettingsToMerge, localSettingsPath)
         {
-            _azureConfigPath = azureConfigPath;
+            _azureSettingsToMerge = azureSettingsToMerge;
             _localSettingsPath = localSettingsPath;
         }
 
@@ -22,7 +22,7 @@ namespace SettingsMerger.Services
             var output = "No results...";
             try
             {
-                var azureConfig = JsonConvert.DeserializeObject<List<AzureConfigItem>>(File.ReadAllText(_azureConfigPath));
+                var azureConfig = JsonConvert.DeserializeObject<List<AzureConfigItem>>(_azureSettingsToMerge);
                 var localSettings = JObject.Parse(File.ReadAllText(_localSettingsPath));
 
                 if (localSettings["Values"] == null)
