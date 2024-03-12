@@ -2,10 +2,10 @@
 {
     public abstract class BaseMerger
     {        
-        public BaseMerger(string azureConfigPath, string localFilePath)
+        public BaseMerger(string azureSettingsToMerge, string localFilePath)
         {
         }
 
-        public abstract string Merge(bool overrideLocalFile);
+        public abstract string Merge(bool overrideLocalFile = true);
     }
 }

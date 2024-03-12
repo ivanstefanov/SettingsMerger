@@ -1,0 +1,24 @@
+The purpose of this app is to merge the configuration settings of an azure web app to the local development file in order to allow the developers to adjust easy and faster his working environment.
+There are two main flows that the developer may choose:
+1. To select directly the web resource name and its resource group, to export the settings and then to merge them into a choose dev settings file.
+2. To select previously exported settings from an external file, to choose the dev settings file, which needs to be merged and to merge them.
+
+When working with the program, you can choose the first of the second flow, depending the selection of the "Settings Source" tab control.
+If you choose to export the settings from Azure, you need to type the Resource group and Web App names and then to press on "Get Azure Settings" button. The exported settings will appear into the Output text field.
+If you choose to merge previously exported settings, you need to choose the second tab and to choose the exported settings file path.
+
+If you want to see the result of the merge, you need to choose the dev setting file path from the "Destination File" components group.
+When you press "Merge", the program, validates the input data and display the merge result into the output text area. If the "Override Destination file" checkbox is checked, the merged result is directly written into the output file.
+
+There are additional radio button options which allows you to choose the type of the dev setting file. This may be useful due to the different structure of the appsettings and the local setting files and the different representation of the settings hierarchies if such exists.
+
+Here are some tips if you wish to export the setting externally without using the app logic itself:
+1. Open any bash console 
+2. Run 'az login' in order to login to azure portal 
+3. (optional) Specify the current folder where you want to save the downloaded settings 
+4. Run 'az webapp config appsettings list' with appropriate parameters 
+
+Information about the az webbapp command: https://learn.microsoft.com/en-us/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-list 
+
+Example:
+az webapp config appsettings list -g  "{RESOURCE_GROUP_NAME}" -n  "{RESOURCE_NAME}" -o json > {RESOURCE_NAME}.settings.json
