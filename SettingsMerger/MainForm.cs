@@ -15,7 +15,7 @@ namespace SettingsMerger
         }
 
         string _lastUsedPath = @"C:\";
-        bool isInAzureState = false;
+        
         public string ExportedAzureSettings { get; set; }
 
         private void btnBrowseExportedSettings_Click(object sender, EventArgs e)
@@ -143,15 +143,3 @@ namespace SettingsMerger
         }
     }
 }
-
-//// Simple data structure for holding setting data
-//class AppSettingResponse
-//{
-//    public AppSetting[] Value { get; set; }
-//}
-
-//class AppSetting
-//{
-//    public string Name { get; set; }
-//    public string Value { get; set; }
-//}
