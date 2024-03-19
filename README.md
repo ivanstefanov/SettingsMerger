@@ -36,7 +36,7 @@ az login
 ```
 Follow the on-screen instructions to complete the authentication process.
 
-2. **Obtain Application Settings:**
+2. **Obtain Application Settings:** (only if you are planning to merge the setting via export file)
 
 Use the Azure CLI to list the application settings for your Azure web app:
 ```bash
@@ -51,12 +51,13 @@ Ensure you replace **<RESOURCE_NAME>** and **<RESOURCE_GROUP_NAME>** with your a
 - Click the "Merge" button to start the process. The tool will automatically merge the Azure settings into your local configuration file.
 
 ## Contribution
-1. Create a feature branch.
-2. Do your changes.
-3. Push your branch.
-4. Create pull request with well described reasoning about the changes.
-5. Wait for approval.
-6. Merge your changes after the approval.
+1. Request access by posting a comment under the contributor post in the github [discussion tab](https://github.com/ivanstefanov/SettingsMerger/discussions/3)
+2. Create a feature branch.
+3. Do your changes.
+4. Push your branch.
+5. Create pull request with well described reasoning about the changes.
+6. Wait for approval.
+7. Merge your changes after the approval.
 
 ## Further development
 The purpose of this tool is to become more and more useful for the developers who works with Azure by adding more and more features that can automate their work and helps them to save precious time.
