@@ -37,7 +37,6 @@
             btnBrowseExportedSettings = new Button();
             btnBrowseLocalSettings = new Button();
             openFileDialog1 = new OpenFileDialog();
-            label4 = new Label();
             btnMerge = new Button();
             tbxOutput = new TextBox();
             rbLocalSettings = new RadioButton();
@@ -57,6 +56,7 @@
             tpConfigFile = new TabPage();
             gbInput = new GroupBox();
             gbDestination = new GroupBox();
+            groupBox1 = new GroupBox();
             gbOutput = new GroupBox();
             toolStrip1.SuspendLayout();
             tcInput.SuspendLayout();
@@ -64,6 +64,7 @@
             tpConfigFile.SuspendLayout();
             gbInput.SuspendLayout();
             gbDestination.SuspendLayout();
+            groupBox1.SuspendLayout();
             gbOutput.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,7 +82,8 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(6, 28);
+            label2.Location = new Point(6, 19);
+            label2.Margin = new Padding(3);
             label2.Name = "label2";
             label2.Size = new Size(115, 15);
             label2.TabIndex = 1;
@@ -100,23 +102,23 @@
             // tbxExportedSettingsFilePath
             // 
             tbxExportedSettingsFilePath.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tbxExportedSettingsFilePath.Location = new Point(117, 12);
+            tbxExportedSettingsFilePath.Location = new Point(8, 33);
             tbxExportedSettingsFilePath.Name = "tbxExportedSettingsFilePath";
-            tbxExportedSettingsFilePath.Size = new Size(306, 23);
+            tbxExportedSettingsFilePath.Size = new Size(415, 23);
             tbxExportedSettingsFilePath.TabIndex = 3;
             // 
             // tbxLocalSettingsFilePath
             // 
             tbxLocalSettingsFilePath.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tbxLocalSettingsFilePath.Location = new Point(127, 25);
+            tbxLocalSettingsFilePath.Location = new Point(6, 40);
             tbxLocalSettingsFilePath.Name = "tbxLocalSettingsFilePath";
-            tbxLocalSettingsFilePath.Size = new Size(236, 23);
+            tbxLocalSettingsFilePath.Size = new Size(357, 23);
             tbxLocalSettingsFilePath.TabIndex = 4;
             // 
             // btnBrowseExportedSettings
             // 
             btnBrowseExportedSettings.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnBrowseExportedSettings.Location = new Point(429, 12);
+            btnBrowseExportedSettings.Location = new Point(429, 33);
             btnBrowseExportedSettings.Name = "btnBrowseExportedSettings";
             btnBrowseExportedSettings.Size = new Size(75, 23);
             btnBrowseExportedSettings.TabIndex = 5;
@@ -127,7 +129,7 @@
             // btnBrowseLocalSettings
             // 
             btnBrowseLocalSettings.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnBrowseLocalSettings.Location = new Point(369, 25);
+            btnBrowseLocalSettings.Location = new Point(369, 40);
             btnBrowseLocalSettings.Name = "btnBrowseLocalSettings";
             btnBrowseLocalSettings.Size = new Size(75, 23);
             btnBrowseLocalSettings.TabIndex = 6;
@@ -139,16 +141,6 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             openFileDialog1.InitialDirectory = "C:\\";
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 66);
-            label4.Name = "label4";
-            label4.Size = new Size(111, 15);
-            label4.TabIndex = 7;
-            label4.Text = "Dev setting file type";
             // 
             // btnMerge
             // 
@@ -176,7 +168,7 @@
             // rbLocalSettings
             // 
             rbLocalSettings.AutoSize = true;
-            rbLocalSettings.Location = new Point(244, 65);
+            rbLocalSettings.Location = new Point(7, 47);
             rbLocalSettings.Name = "rbLocalSettings";
             rbLocalSettings.Size = new Size(119, 19);
             rbLocalSettings.TabIndex = 12;
@@ -187,7 +179,7 @@
             // 
             rbAppSettings.AutoSize = true;
             rbAppSettings.Checked = true;
-            rbAppSettings.Location = new Point(127, 64);
+            rbAppSettings.Location = new Point(7, 22);
             rbAppSettings.Name = "rbAppSettings";
             rbAppSettings.Size = new Size(111, 19);
             rbAppSettings.TabIndex = 13;
@@ -200,7 +192,7 @@
             chkbOverrideSettingFile.AutoSize = true;
             chkbOverrideSettingFile.Checked = true;
             chkbOverrideSettingFile.CheckState = CheckState.Checked;
-            chkbOverrideSettingFile.Location = new Point(6, 89);
+            chkbOverrideSettingFile.Location = new Point(289, 70);
             chkbOverrideSettingFile.Name = "chkbOverrideSettingFile";
             chkbOverrideSettingFile.Size = new Size(153, 19);
             chkbOverrideSettingFile.TabIndex = 14;
@@ -340,19 +332,28 @@
             // gbDestination
             // 
             gbDestination.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            gbDestination.Controls.Add(groupBox1);
             gbDestination.Controls.Add(label2);
-            gbDestination.Controls.Add(rbLocalSettings);
             gbDestination.Controls.Add(tbxLocalSettingsFilePath);
             gbDestination.Controls.Add(chkbOverrideSettingFile);
-            gbDestination.Controls.Add(rbAppSettings);
             gbDestination.Controls.Add(btnBrowseLocalSettings);
-            gbDestination.Controls.Add(label4);
             gbDestination.Location = new Point(559, 79);
             gbDestination.Name = "gbDestination";
             gbDestination.Size = new Size(448, 150);
             gbDestination.TabIndex = 19;
             gbDestination.TabStop = false;
             gbDestination.Text = "Destination File";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rbAppSettings);
+            groupBox1.Controls.Add(rbLocalSettings);
+            groupBox1.Location = new Point(6, 68);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(200, 73);
+            groupBox1.TabIndex = 21;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Dev setting file type";
             // 
             // gbOutput
             // 
@@ -388,6 +389,8 @@
             gbInput.ResumeLayout(false);
             gbDestination.ResumeLayout(false);
             gbDestination.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             gbOutput.ResumeLayout(false);
             gbOutput.PerformLayout();
             ResumeLayout(false);
@@ -404,7 +407,6 @@
         private Button btnBrowseExportedSettings;
         private Button btnBrowseLocalSettings;
         private OpenFileDialog openFileDialog1;
-        private Label label4;
         private Button btnMerge;
         private TextBox tbxOutput;
         private RadioButton rbLocalSettings;
@@ -425,5 +427,6 @@
         private Label lblResourceGroupName;
         private TextBox tbxResourceGroupName;
         private GroupBox gbOutput;
+        private GroupBox groupBox1;
     }
 }

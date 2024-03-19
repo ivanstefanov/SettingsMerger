@@ -15,7 +15,7 @@ namespace SettingsMerger
         }
 
         string _lastUsedPath = @"C:\";
-        
+
         public string ExportedAzureSettings { get; set; }
 
         private void btnBrowseExportedSettings_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace SettingsMerger
             tbxLocalSettingsFilePath.Text = string.Empty;
             tbxResourceGroupName.Text = string.Empty;
             tbxWebAppName.Text = string.Empty;
-            tbxOutput.Text = string.Empty;            
+            tbxOutput.Text = string.Empty;
         }
 
         private void helpToolStripButton_Click(object sender, EventArgs e)
